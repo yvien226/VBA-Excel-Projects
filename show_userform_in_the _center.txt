@@ -1,0 +1,8 @@
+With SchemeDesignNodesForm
+    
+    'Adjust position
+    .StartUpPosition = 0
+    .Left = Application.Left + (0.5 * Application.width) - (0.5 * .width)
+    .Top = Application.Top + (0.5 * Application.height) - (0.5 * .height)
+
+End With
