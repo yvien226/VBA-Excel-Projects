@@ -1,0 +1,41 @@
+' **************************************************************
+' Restore Application
+' **************************************************************
+Public savedCalculationMode                 As Long
+Public savedMaxChange                       As Double
+Public savedScreenUpdating                  As Boolean
+Public savedEnableEvents                    As Boolean
+Public savedCalculateBeforeSave             As Boolean
+Public savedDisplayAlerts                   As Boolean
+
+
+' Set application properties.
+With Application
+    savedCalculationMode = .Calculation
+    savedMaxChange = .MaxChange
+    savedScreenUpdating = .ScreenUpdating
+    savedEnableEvents = .EnableEvents
+    savedCalculateBeforeSave = .CalculateBeforeSave
+    savedDisplayAlerts = .DisplayAlerts
+    .Calculation = xlCalculationManual
+    .MaxChange = 0.001
+    .ScreenUpdating = False
+    .EnableEvents = False
+    .CalculateBeforeSave = False
+    .DisplayAlerts = False
+    .Cursor = xlWait
+End With
+
+
+
+
+' Restore the application properties.
+With Application
+    .ScreenUpdating = savedScreenUpdating
+    .EnableEvents = savedEnableEvents
+    .CalculateBeforeSave = savedCalculateBeforeSave
+    .DisplayAlerts = savedDisplayAlerts
+    .Calculation = savedCalculationMode
+    .MaxChange = savedMaxChange
+    .Cursor = xlDefault
+End With
