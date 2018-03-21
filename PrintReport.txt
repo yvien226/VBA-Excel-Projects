@@ -1,0 +1,27 @@
+Sub Print_Reports()
+Dim DataEnter As Worksheet
+
+On Error Resume Next
+
+Application.ScreenUpdating = False
+Set DataEnter = ThisWorkbook.Worksheets("DataEnter")
+
+
+With DataEnter.PageSetup
+    .Orientation = xlPotrait 'xlLandscape
+    '.Zoom = False
+    
+    .LeftMargin = Application.CentimetersToPoints(0)
+    .RightMargin = Application.CentimetersToPoints(0)
+    .TopMargin = Application.CentimetersToPoints(1.5)
+    .BottomMargin = Application.CentimetersToPoints(0)
+    .HeaderMargin = Application.CentimetersToPoints(0.7)
+    .FooterMargin = Application.CentimetersToPoints(0)
+    .FitToPagesWide = 1
+    .FitToPagesTall = 1
+End With
+Application.Dialogs(xlDialogPrint).Show
+
+
+Application.ScreenUpdating = True
+End Sub
