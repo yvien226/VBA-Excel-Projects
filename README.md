@@ -1,2 +1,2 @@
 # VBA-Excel-Scripts
-This repository contains useful Excel VBA
+A repo containing sample Excel VBA scripts and projects that I have developed
